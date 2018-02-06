@@ -8,4 +8,6 @@ The relative density created by each .rb file will contribute to the overall den
 This method of algorithmic composition requires an installation of node-RED (https://nodered.org), the Twitter node (https://www.npmjs.com/package/node-red-node-twitter), Sonic-Pi (http://www.sonic-pi.net),
 and the command line untility sonic-pi-cli (https://github.com/Widdershin/sonic-pi-cli).
 
+Copy the json file and paste it from the clipboard into a new flow in your node-red instance. Log into the Twitter node using valid account credentials. Adjust the exec node pathways to target the shell scripts where they exist on your machine.
+
 See the runner.sh and stopper.sh shell script examples. Adjust the syntax as necessary for your system.
