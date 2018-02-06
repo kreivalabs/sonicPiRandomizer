@@ -1,1 +1,234 @@
-[{"id":"76ba9da3.fa7d94","type":"comment","z":"6bacc0fc.0ee78","name":"README - shell file formatting","info":"#!/usr/bin/env osascript\n\ntell application \"System Events\" \n  if \"Terminal\" is not in name of processes then launch application \"Terminal\" \n    tell process \"Terminal\" \n    set frontmost to true \n      if (count windows) is 1 then keystroke \"n\" using command down \n      if (count windows) is 2 then \n    end if \n  end tell \nend tell\n\ntell application \"Terminal\" \n  do script \"`sonic_pi \\\"run_file '~/Dropbox/Code/Ruby/SonicPi/multiRandom.rb'\\\"`\" in window 1\nend tell","x":320,"y":240,"wires":[]},{"id":"c0f70fce.8e269","type":"exec","z":"6bacc0fc.0ee78","command":"exec","addpay":false,"append":"/Users/HoganSound/Dropbox/Code/Ruby/SonicPi/Launchers/runner.sh","useSpawn":"false","timer":"","oldrc":false,"name":"runner.sh","x":440,"y":60,"wires":[["d58a56e7.6c994"],[],[]]},{"id":"efd53a47.217eb8","type":"twitter in","z":"6bacc0fc.0ee78","twitter":"","tags":"node-red, qlab","user":"false","name":"'node-red', 'qlab'","topic":"tweets","inputs":0,"x":100,"y":60,"wires":[["c0f70fce.8e269"]]},{"id":"3c6dada.19172d2","type":"comment","z":"6bacc0fc.0ee78","name":"shell script launcher","info":"","x":470,"y":100,"wires":[]},{"id":"67cfe91e.e63978","type":"comment","z":"6bacc0fc.0ee78","name":"Twitter watcher w/search terms","info":"","x":150,"y":100,"wires":[]},{"id":"71ef711a.15b71","type":"comment","z":"6bacc0fc.0ee78","name":"Duplicate the Twitter - exec node series above for additional search terms and shell script launchers","info":"","x":360,"y":140,"wires":[]},{"id":"d58a56e7.6c994","type":"debug","z":"6bacc0fc.0ee78","name":"do command","active":true,"console":"false","complete":"payload","x":650,"y":40,"wires":[]},{"id":"88c61361.2ce938","type":"comment","z":"6bacc0fc.0ee78","name":"README - Exec node formatting","info":"Running .sh files from node-red exec node:\nCommand = 'exec'\nadditional info = /path/to/your/fileAndExtension\nOutput = when the command is complete - exec mode","x":330,"y":200,"wires":[]}]
+[
+    {
+        "id": "68689119.e0bbb8",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fad8a911.f12618",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "README - Runner shell file formatting",
+        "info": "#!/usr/bin/env osascript\n\ntell application \"System Events\" \n  if \"Terminal\" is not in name of processes then launch application \"Terminal\" \n    tell process \"Terminal\" \n    set frontmost to true \n      if (count windows) is 1 then keystroke \"n\" using command down \n      if (count windows) is 2 then \n    end if \n  end tell \nend tell\n\ntell application \"Terminal\" \n  do script \"`sonic_pi \\\"run_file '~/Dropbox/Code/Ruby/SonicPi/multiRandom.rb'\\\"`\" in window 1\nend tell",
+        "x": 170,
+        "y": 680,
+        "wires": [],
+        "icon": "node-red/alert.png"
+    },
+    {
+        "id": "5851ef74.e5d77",
+        "type": "exec",
+        "z": "68689119.e0bbb8",
+        "command": "exec",
+        "addpay": false,
+        "append": "/Users/HoganSound/Dropbox/Code/Ruby/SonicPi/Launchers/runner.sh",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "runner.sh",
+        "x": 700,
+        "y": 40,
+        "wires": [
+            [
+                "2f2edc04.2e97c4"
+            ],
+            [
+                "2f2edc04.2e97c4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d5dc63ed.bc90d",
+        "type": "twitter in",
+        "z": "68689119.e0bbb8",
+        "twitter": "",
+        "tags": "",
+        "user": "false",
+        "name": "Twitter watcher",
+        "topic": "tweets",
+        "inputs": 1,
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "5851ef74.e5d77",
+                "2f2edc04.2e97c4"
+            ]
+        ],
+        "outputLabels": [
+            "trigger"
+        ]
+    },
+    {
+        "id": "86176a2d.e35d8",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "Sh launcher",
+        "info": "",
+        "x": 710,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a6ae1f1c.89795",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "Enter search terms",
+        "info": "",
+        "x": 110,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "79ab5e06.8960f8",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "Duplicate the Twitter - exec node series above for additional search terms and shell script launchers",
+        "info": "",
+        "x": 360,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "2f2edc04.2e97c4",
+        "type": "debug",
+        "z": "68689119.e0bbb8",
+        "name": "CONSOLE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 990,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b294a92b.b6ce7",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "README - Exec node formatting",
+        "info": "Running .sh files from node-red exec node:\nCommand = 'exec'\nadditional info = /path/to/your/fileAndExtension\nOutput = when the command is complete - exec mode",
+        "x": 150,
+        "y": 640,
+        "wires": [],
+        "icon": "node-red/alert.png"
+    },
+    {
+        "id": "ca23c478.12907",
+        "type": "exec",
+        "z": "68689119.e0bbb8",
+        "command": "exec",
+        "addpay": false,
+        "append": "/Users/HoganSound/Dropbox/Code/Ruby/SonicPi/Launchers/stopper.sh",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "stopper.sh",
+        "x": 710,
+        "y": 260,
+        "wires": [
+            [
+                "2f2edc04.2e97c4"
+            ],
+            [
+                "2f2edc04.2e97c4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "97adfb95.66f6a",
+        "type": "inject",
+        "z": "68689119.e0bbb8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "ca23c478.12907"
+            ]
+        ]
+    },
+    {
+        "id": "8ed5f43d.cb004",
+        "type": "inject",
+        "z": "68689119.e0bbb8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 40,
+        "wires": [
+            [
+                "5851ef74.e5d77"
+            ]
+        ]
+    },
+    {
+        "id": "891ccced.59c548",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "Manual stop",
+        "info": "",
+        "x": 90,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9dfacc49.732b5",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "Manual start",
+        "info": "",
+        "x": 90,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3054b841.f3e56",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "Valid terms will trigger shell script and print to debug console",
+        "info": "",
+        "x": 240,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4b60587e.3bed28",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "README - Stopper shell file formatting",
+        "info": "#! /usr/bin/env osascript\n\ntell application \"System Events\"\n\tif \"Terminal\" is not in name of processes then launch application \"Terminal\"\n\ttell process \"Terminal\"\n\t\tset frontmost to true\n\t\tif (count windows) is 1 then keystroke \"n\" using command down\n\t\tif (count windows) is 2 then\n\t\tend if\n\tend tell\n\t\nend tell\n\ntell application \"Terminal\"\n\tdo script \"`sonic_pi \\\"stop\\\"`\" in window 1\nend tell",
+        "x": 170,
+        "y": 720,
+        "wires": [],
+        "icon": "node-red/alert.png"
+    },
+    {
+        "id": "34460a5f.27c886",
+        "type": "comment",
+        "z": "68689119.e0bbb8",
+        "name": "Stop playback",
+        "info": "",
+        "x": 710,
+        "y": 300,
+        "wires": []
+    }
+]
