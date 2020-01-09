@@ -1,6 +1,6 @@
 #! /usr/bin/env osascript
 
-#run AppleScript syntax from a shell script to activate a Terminal process and execute ruby files on a macOS machine
+#run AppleScript syntax from a shell script to activate a Terminal process and execute ruby files on a macOS machine. Open Terminal and create a new window for node-red events.
 
 tell application "System Events"
 	if "Terminal" is not in name of processes then launch application "Terminal"
